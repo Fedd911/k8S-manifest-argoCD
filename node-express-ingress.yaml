@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-express-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - djingle.xyz
+    secretName: nodeapp-tls
+  ingressClassName: nginx
+  rules:
+  - host: djingle.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: node-express-app-deployment-service
+            port:
+              number: 80
