@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: node-express-app-deployment-service
+            name: node-express-app-service
             port:
               number: 80

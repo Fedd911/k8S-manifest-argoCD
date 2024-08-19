@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: node-express-app-deployment-service
+  name: node-express-app-service
 spec:
   selector:
     app: node-express-app
